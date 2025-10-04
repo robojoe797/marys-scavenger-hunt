@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Scavenger Hunt - Clue 1</title>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      background: linear-gradient(to right, #ff9a9e, #fad0c4);
+      color: #333;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      text-align: center;
+      overflow: hidden;
+    }
+    .container {
+      background: rgba(255, 255, 255, 0.9);
+      padding: 40px;
+      border-radius: 20px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+      max-width: 500px;
+      position: relative;
+    }
+    h1 {
+      font-size: 2.5rem;
+      color: #ff4e50;
+      margin-bottom: 20px;
+    }
+    p {
+      font-size: 1.2rem;
+      margin-bottom: 30px;
+    }
+    a.button {
+      display: inline-block;
+      background-color: #ff4e50;
+      color: white;
+      padding: 15px 30px;
+      font-size: 1.1rem;
+      border-radius: 10px;
+      text-decoration: none;
+      transition: background 0.3s;
+    }
+    a.button:hover {
+      background-color: #ff7373;
+    }
+    /* Hidden image for puzzle */
+    #secretImage {
+      display: none;
+      width: 100px;
+      position: absolute;
+      bottom: 10px;
+      right: 10px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <audio autoplay loop>
+    <source src="https://www.bensound.com/bensound-music/bensound-romantic.mp3" type="audio/mpeg">
+    Your browser does not support the audio element.
+  </audio>
+
+  <div class="container">
+    <h1>Clue #1</h1>
+    <p>Welcome to your first clue! 🎉  
+    Look carefully — a secret hint is hidden on this page.  
+    Click the heart to reveal your next step!</p>
+    
+    <img src="https://i.imgur.com/1j7Gf1A.png" id="secretImage" alt="Hidden Heart">
+    
+    <a class="button" id="nextClue" href="#" style="display:none;">Reveal Clue #2</a>
+  </div>
+
+  <script>
+    // Secret puzzle: click anywhere on container 3 times to reveal image
+    let clicks = 0;
+    const container = document.querySelector('.container');
+    const secretImage = document.getElementById('secretImage');
+    const nextClue = document.getElementById('nextClue');
+
+    container.addEventListener('click', () => {
+      clicks++;
+      if(clicks === 3) {
+        secretImage.style.display = 'block';
+      }
+    });
+
+    // Clicking the hidden heart shows the next clue button
+    secretImage.addEventListener('click', () => {
+      nextClue.style.display = 'inline-block';
+    });
+  </script>
+</body>
+</html>
