@@ -67,7 +67,9 @@
   <div class="container">
     <h1>Clue #1</h1>
     <p>Welcome to your first clue! 🎉  
-    Look carefully — a secret hint is hidden on this page.  
+    Look carefully — a secret hint is hidden on this page.
+    You might have to tap around to find it.
+      Hmm, does it have something to do with the month of our first date?
     When you find us, tap on it to reveal your next step!</p>
     
     <img src="firstpic.jpg" id="secretImage" alt="Hidden Heart" width="300">
@@ -84,7 +86,7 @@
 
     container.addEventListener('click', () => {
       clicks++;
-      if(clicks === 3) {
+      if(clicks === 5) {
         secretImage.style.display = 'block';
       }
     });
@@ -96,6 +98,7 @@
   </script>
 </body>
 </html>
+
 
 
 
